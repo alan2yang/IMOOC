@@ -1,0 +1,65 @@
+/*
+先写共同的特征，然后将特别的样式提炼出来单独写
+
+
+
+*/
+
+body{
+     	font-family: Microsoft YaHei;
+     	font-size: 0;
+     }
+#main{
+     	width: 400px;
+     	border: 1px solid black;
+      padding: 5px;
+      margin:10px auto;
+     }
+ul{
+  padding:0;       /* 这里的padding是为了消除浏览器端的误差*/
+  text-align: center;
+}
+#title{
+  border-bottom: 2px solid red;
+  height: 29px;
+}
+#title li{
+  display: inline-block;
+  width: 70px;
+  font-size: 20px;
+  margin-right: 10px;
+  border:1px solid black;
+  border-bottom: none;
+}
+#main div{
+  border:1px solid black;
+  border-top:none;
+}
+a{
+      	text-decoration: none;
+      	font-size: 18px;
+      line-height: 30px;
+      }
+#title .active{
+  border-top: 2px solid red;
+  border-bottom: 3px solid #fff;
+}
+
+
+
+
+.hidde{
+        display: none;
+    }
+
+#test1{
+      	width:200px;
+      	height: 200px;
+      	border: 1px solid red;
+        margin:0 auto;
+      }
+#test2{
+            width:150px;
+            height: 150px;
+            border:1px solid blue;
+     }
