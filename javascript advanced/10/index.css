@@ -31,35 +31,23 @@ ul{
   border:1px solid black;
   border-bottom: none;
 }
+#title li:hover{
+  cursor: pointer;
+}
 #main div{
   border:1px solid black;
   border-top:none;
 }
 a{
       	text-decoration: none;
-      	font-size: 18px;
+      	font-size: 16px;
       line-height: 30px;
+      color:black;
       }
 #title .active{
   border-top: 2px solid red;
   border-bottom: 3px solid #fff;
 }
-
-
-
-
 .hidde{
         display: none;
     }
-
-#test1{
-      	width:200px;
-      	height: 200px;
-      	border: 1px solid red;
-        margin:0 auto;
-      }
-#test2{
-            width:150px;
-            height: 150px;
-            border:1px solid blue;
-     }
