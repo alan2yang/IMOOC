@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二维数组</title>
+	<link rel="stylesheet" type="text/css" href="../normalize.css">
+	<script type="text/javascript">
+	//二维数组定义方法一
+		var mynum=new Array(3);//申明一维长度为3，可理解为行数
+		for(var i=0;i<3;i++){
+			mynum[i]=new Array(6);//申明二维长度为6，可理解为列数
+			for(var j=0;j<6;j++){
+				mynum[i][j]=i*j;
+			}
+		}
+		document.write(mynum+"<br>");//输出可理解为按行输出
+	//二维数组定义方法二
+		var myarr=[[0,1],[1,2],[4,5]];
+		document.write(myarr.length);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

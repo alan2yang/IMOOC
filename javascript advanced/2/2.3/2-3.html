@@ -1,0 +1,29 @@
+<!-- 操作符优先级：算数操作符>比较操作符>逻辑操作符>赋值操作符 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>逻辑运算和优先级</title>
+	<link rel="stylesheet" type="text/css" href="../normalize.css">
+	<script type="text/javascript">
+		var numa,numb,jq1,jq2;
+		numa=60;
+		numb=75;
+		if(numa>=60&&numb>=60)
+		{
+			document.write("JavaScript考核通过！"+"<br>");
+		}
+		jq1=numa>numb||numa==numb;
+		document.write("jq1的值是:"+jq1+"<br>");
+		jq2=!(numa<numb);
+		document.write("jq2的值是:"+jq2+"<br>")
+		jq1=numa + 30 >10 && numb * 3<20;
+		jq2=((numa + 30) / (7-numb)) * 3;
+		document.write("jq1的值是:"+jq1+"<br>");
+		document.write("jq2的值是:"+jq2);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

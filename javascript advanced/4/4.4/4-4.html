@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>break--continue</title>
+	<link rel="stylesheet" type="text/css" href="../normalize.css">
+	<script type="text/javascript">
+		var mynum =new Array(70,80,66,90,50,100,89);//定义数组mynum并赋值
+		var i=0;
+		while(i<mynum.length)
+		{
+			if(mynum[i]<60)
+			{
+				document.write("成绩"+mynum[i]+"不及格，不用循环了"+"<br>");
+				break;//循环停止
+			}
+			document.write("成绩:"+mynum[i]+"及格，继续循环"+"<br>");
+			i=i+1;
+		}
+		var j;
+		for(j=0;j<mynum.length;j++)
+		{
+			if(mynum[j]<60)
+			{
+				document.write("成绩不及格，不输出！"+"<br>");
+				continue;//结束本次循环，直接进入下一个
+			}
+			document.write("成绩:"+mynum[j]+"及格，输出!"+"<br>");
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
