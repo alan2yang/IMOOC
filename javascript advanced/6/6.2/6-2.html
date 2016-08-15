@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>内容选中和内容改变</title>
+	<link rel="stylesheet" type="text/css" href="../normalize.css">
+	<script type="text/javascript">
+		function message(){
+			alert("您触发了选中事件！");
+		}
+		function message_1(){
+			alert("您改变了文本内容！");
+		}
+	</script>
+</head>
+<body>
+	<form>
+		个人简介：<br>
+		<textarea name="summary" cols="60" rows="5" onselect="message()" onchange="message_1()">请写入个人简介，不少于200字！</textarea>
+	</form>
+</body>
+</html>

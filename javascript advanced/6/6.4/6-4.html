@@ -1,0 +1,38 @@
+<!-- 关键点是如何获取输入的数字和输出结果 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>编程练习</title>
+	<link rel="stylesheet" type="text/css" href="../normalize.css">
+	<script type="text/javascript">
+	function count(){
+		var sum;
+		var num1=document.getElementById("txt1").value;
+		var num2=document.getElementById("txt2").value;
+		var compute=document.getElementById("select").value;
+		num1=parseInt(num1);
+		num2=parseInt(num2);
+		switch (compute) {
+			case "+":sum=num1+num2;break;
+			case "-":sum=num1-num2;break;
+			case "*":sum=num1*num2;break;
+			default:sum=num1/num2;break;
+		}
+		document.getElementById("result").value=sum;
+	}
+	</script>
+</head>
+<body>
+	<input type='text' id='txt1' />
+	<select id='select'>
+		<option value='+'>+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+	</select>
+	<input type='text' id='txt2' />
+	<input type='button' value=' = ' onclick="count()"/> <!--通过 = 按钮来调用创建的函数，得到结果--> 
+	<input type='text' id='result' />
+</body>
+</html>

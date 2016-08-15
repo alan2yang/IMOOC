@@ -1,3 +1,4 @@
+<!-- 鼠标移过：onmouseover,鼠标移出：onmouseout,单击：onclick,聚焦：onfocus,失焦：onblur, -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +8,38 @@
 	<script type="text/javascript">
 		function openwin(){
 			window.open('http://www.imooc.com','_blank','height=600,width=400,top=100,toolbar=no,left=0,menubar=no,scrollbars=no,status=no');}
+		function message_1(){
+			confirm("请输入密码后，再单击确定！");
+		}
+		function message_2(){
+			alert("请选择，您现在的职业！");
+		}
+		function message_3(){
+			alert("请确定已输入密码后，在移开!");
+		}
 	</script>
 </head>
 <body>
+	请选择您的职业：<br>
+	<form >
+		<select name="career" onfocus="message_2()">
+			<option>学生</option>
+			<option>教师</option>
+			<option>工程师</option>
+			<option>演员</option>
+			<option>会计</option>
+		</select>
+	</form>
 	<form>
 	<input  type="button" value="点击我" onclick="openwin()"/>
+	</form>
+	<form action="">
+	密码：<input type="password" name="password">
+	<input type="button" value="确定" onmouseover="message_1()">
+	</form>
+	<form>
+		用户:<input name="username" type="text" value="请输入用户名！" ><br>
+		密码:<input name="password" type="text" value="请输入密码！" onblur="message_3()">
 	</form>
 </body>
 </html>
