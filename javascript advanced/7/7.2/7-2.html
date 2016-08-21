@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符串对象</title>
+	<link rel="stylesheet" type="text/css" href="../normalize.css">
+	<script type="text/javascript">
+		var a="hello world";
+		var b=a.toUpperCase();//这里的toUpperCase()并不改变原来的a，而是生成新的字符串，因为字符串的内容是不能更改的
+		document.write(a+"<br>");
+		document.write(b+"<br>");
+
+		//返回指定位置的字符，注：空格也算是一个字符
+		var mystr="I love javascript！Yeah！";
+		document.write(mystr.charAt(4)+"<br>");
+		document.write(mystr+"<br>");
+
+		//返回指定字符串第一次出现的位置，可选参数：开始排查的位置
+		//若找不到指定字符则返回-1；
+		//区分大小写
+		document.write("e第一次出现的位置（默认从位置0开始排查）"+mystr.indexOf('e')+"<br>");
+		document.write("e第一次出现的位置（从位置5开始排查）"+mystr.indexOf('e',5)+"<br>");
+		document.write("e第一次出现的位置（从位置6开始排查）"+mystr.indexOf('e',6)+"<br>");
+		document.write("e倒数第一次出现的位置"+mystr.lastIndexOf('e')+"<br>");
+
+		//分割字符串
+		//两个参数：分割方式，分割后返回的字符串个数
+		//以空字符作为分割方式则字符串中的每个字符都会被分割
+		var mynum="86-010-85468578";
+		document.write(mynum.split("-")+ "<br>");
+		document.write(mynum.split("")+"<br>");
+		document.write(mynum.split("",4)+"<br>");
+
+		//提取字符串中的字符串
+		//两个参数：提取的开始位置（start），提取不到的位置（stop）
+		//因为提取的区间为[start,stop-1],特别的截至位置是stop-1！！！
+		//若start=stop，则返回空字符串
+		//若start>stop,则该方法会先交换两值，再提取
+		document.write(mystr.substring(2)+"<br>");
+		document.write(mystr.substring(7,17)+"<br>");
+
+		//提取指定数目的字符串
+		//两个参数：起始位置，要提取的字符串长度
+		//起始位置可以是负数，-1表示倒数第一位字符，-2表示倒数第二位字符
+		document.write(mystr.substr(5)+"<br>");
+		document.write(mystr.substr(7,7)+"<br>");
+		document.write(mystr.substr(-2,1)+"<br>");//负数为起始位置时，它只能提取到该字符到最后字符之间的内容
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

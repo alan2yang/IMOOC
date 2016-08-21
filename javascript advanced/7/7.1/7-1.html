@@ -4,6 +4,22 @@
 	<meta charset="UTF-8">
 	<title>对象</title>
 	<link rel="stylesheet" type="text/css" href="../normalize.css">
+	<script type="text/javascript">
+		var mydate=new Date();
+		var myyear=mydate.getFullYear();
+		var mymonth=mydate.getMonth();
+		var myday=mydate.getDate();//获取日期
+		var myweekday=mydate.getDay();//获取星期，返回0-6，分别对应星期日，星期一，.....
+
+
+		var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+		myweekday=weekday[myweekday];
+		document.write(myyear+"年 "+mymonth+"月 "+myday+"日 "+myweekday+"<br>");
+
+		document.write("当前时间："+mydate+"<br>");
+		mydate.setTime(mydate.getTime()+60*60*1000);//setTime/getTime设置和获取时间，这里的设置和获取单位都是ms
+		document.write("一个小时后的时间："+mydate);
+	</script>
 </head>
 <body>
 	
