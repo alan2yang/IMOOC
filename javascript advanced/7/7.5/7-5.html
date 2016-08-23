@@ -2,8 +2,29 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>编程练习</title>
 	<link rel="stylesheet" type="text/css" href="../normalize.css">
+	<script type="text/javascript">
+		var today=new Date();
+		var year=today.getFullYear();
+		var month=today.getMonth();
+		var day=today.getDate();
+		var week=today.getDay();
+		var weeks=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+		week=weeks[week];
+		document.write(year+"年"+month+"月"+day+"日 "+week);
+		var sum=0;
+		var scoreStr="小明:87;小花:81;小红:97;小天:76;小张:74;小小:94;小西:90;小五:76;小迪:64;小曼:76";
+		var messages=scoreStr.split(";");
+		for (var i = 0; i < messages.length; i++) {
+			messages[i]=messages[i].split(":");
+		}//此时messages已经变为二维数组
+		for (var i = 0; i < messages.length; i++) {
+			sum=sum+parseInt(messages[i][1]);
+		}
+		document.write("--班级总分为："+sum);
+		document.write("--平均成绩为："+Math.round(sum/messages.length));
+	</script>
 </head>
 <body>
 	

@@ -5,7 +5,32 @@
 	<title>数组对象</title>
 	<link rel="stylesheet" type="text/css" href="../normalize.css">
 	<script type="text/javascript">
-		
+		//数组连接concat()可以有多个参数
+		var arr1=new Array("010");
+		var arr2=new Array("-","856954");
+		var arr3=[7,7,9,1];
+		document.write(arr1.concat(arr2,arr3)+"<br>");
+
+		//指定分隔符连接数组元素
+		var arr4=arr1.concat(arr2,arr3);
+		document.write(arr4.join('*')+"<br>");
+
+		//颠倒数组元素顺序
+		document.write(arr3.reverse()+"<br>");
+
+		//选定元素
+		//有两个参数：起始位置，结束位置（不包括结束位置）！！！
+		//可以使用负值从结尾选择元素
+		var arr5=["我","爱","你","！"];
+		document.write(arr5.slice(1)+"<br>");//结束位置没定义则到结尾
+		document.write(arr5.slice(1,3)+"<br>");//这里只输出arr5[1],arr5[2]
+
+		//数组排序
+		function sortNum(a,b) {
+			return b-a;
+		}
+		var myarr = new Array("80","16","50","6","100","1");
+		document.write(myarr.sort(sortNum));
 	</script>
 </head>
 <body>
