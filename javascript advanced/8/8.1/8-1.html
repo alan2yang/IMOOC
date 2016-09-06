@@ -2,10 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>window对象</title>
+	<!-- window对象是BOM的核心，window对象指当前的浏览器窗口 -->
 	<link rel="stylesheet" type="text/css" href="../normalize.css">
+	<script type="text/javascript">
+		function openwin(){
+			window.open("http://www.imooc.com", "_blank","width=600,height=400");
+		}
+	</script>
 </head>
 <body>
+	<input type="button" name="" value="点击打开窗口"  onclick="openwin()">
+
+
 	
 </body>
 </html>

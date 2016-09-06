@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>history对象</title>
+	<link rel="stylesheet" type="text/css" href="../normalize.css">
+	<script type="text/javascript">
+		var  hl=window.history.length;                        //window可以省略
+		document.write(hl);
+		function goBack(){
+			window.history.back();           //等同于history.go(-1)
+		}
+		function goNext(){
+			history.forward();                    //等同于history.go(1)
+		}
+	</script>
+</head>
+<body>
+	<a href="http://www.baidu.com">baidu</a>
+	<a href="http://www.whut.edu.cn">whut</a>
+	<input type="button" name="" value="返回前一个页面" onclick="goBack()">
+	<input type="button" name="" value="前进" onclick="goNext()">
+</body>
+</html>

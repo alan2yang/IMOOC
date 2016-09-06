@@ -1,0 +1,45 @@
+<!-- 	js计时器：
+	setTimeout():指定延迟时间之后执行代码；
+	clearTimeout():取消setTimeout()设置；
+	setInterval():每隔指定的时间执行代码；
+	clearInterval():取消setInterval()设置； -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计时器</title>
+	<link rel="stylesheet" type="text/css" href="../normalize.css">
+</head>
+<body>
+	<input type="text" name="" id="clock">
+	<input type="button" name="" value="Stop" onclick="clearInterval(i)"><br>
+	<input type="text" name="" id="count">
+	<input type="button" name="" value="start" onclick="start()">
+	<input type="button" name="" value="stop" onclick="stop()">
+	<a href="../8.3/8-3.html">test</a>
+
+	<script type="text/javascript">
+		var attime;
+		function clock(){
+			var time=new Date();
+			attime=time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
+			document.getElementById("clock").value=attime;
+		}
+		var i=setInterval(clock,1000);
+		
+		var num=0;
+		var j;
+		function start(){
+			stop();
+			document.getElementById("count").value=num;
+			num=num+1;
+			j=setTimeout(start,1000);
+		}
+		function stop(){
+			clearTimeout(j);
+		}
+	</script>
+</body>
+</html>
