@@ -2,10 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>DOM</title>
 	<link rel="stylesheet" type="text/css" href="../normalize.css">
 </head>
 <body>
-	
+	<h2 id="con">I love JavaScript</h2>
+	<p> JavaScript使网页显示动态效果并实现与用户交互功能。</p>
+
+  <script type="text/javascript">
+   var h=document.getElementById("con");
+   h.style.color="red";
+   h.style.backgroundColor="#ccc";
+  // h.style.display="none";
+  </script>
 </body>
 </html>
