@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>get/setAttribute</title>
+	<link rel="stylesheet" type="text/css" href="../normalize.css">
+</head>
+<body>
+	<p id="intro">课程列表:</p>
+	<ul>
+		<li title="第1个li">HTML</li>
+		<li>CSS</li>
+		<li title="第3个li">JavaScript</li>
+		<li title="第4个li">Jquery</li>
+		<li>Html5</li>
+	</ul>
+	<p>以下为获取的不为空的li标签title值:</p>
+
+	<script type="text/javascript">
+		var lists=document.getElementsByTagName("li");
+		for (var i = 0; i < lists.length; i++) {
+			var text=lists[i].getAttribute("title");
+			if(text!=null){
+				document.write(lists[i].title+"<br>");
+			}else {
+				lists[i].setAttribute("title","添加的title");
+				document.write(lists[i].getAttribute("title")+"<br>");
+			}
+		}
+	</script>
+</body>
+</html>
