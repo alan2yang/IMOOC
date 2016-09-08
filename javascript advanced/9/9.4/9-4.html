@@ -2,10 +2,38 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>节点</title>
 	<link rel="stylesheet" type="text/css" href="../normalize.css">
 </head>
 <body>
+	<ul>
+		<li>Javascript</li>
+		<li>Html/Css</li>
+		<li>Jquery</li>
+	</ul>
+
+	<script type="text/javascript">
+	//节点名、节点值、节点类型
+		var names=document.getElementsByTagName("li");
+		for (var i = 0; i < names.length; i++) {
+			var contents="节点名称："+names[i].nodeName+" 节点值："+names[i].nodeValue+"节点类型："+names[i].nodeType+"<br>";
+			document.write(contents);
+		}
+	//子节点
+		var nodes=document.getElementsByTagName("ul")[0].childNodes;
+		for(var i=0;i<nodes.length;i++){
+			document.write(nodes[i].nodeType+"<br>");
+		}
+	//lastChild,firstChild
+		var firstnode=document.getElementsByTagName("ul")[0].firstChild;
+		var lastnode=document.getElementsByTagName("ul")[0].lastChild;
+		document.write(firstnode.nodeName+"<br>");
+		document.write(lastnode.nodeName+"<br>");
+
+	//父节点
+
+
 	
+	</script>
 </body>
 </html>
