@@ -12,6 +12,37 @@
 		<li>Jquery</li>
 	</ul>
 
+	<ul id="con">
+		<li id="lesson1">javascript
+			<ul> 
+				<li id="tcon"> 基础语法</li>
+				<li>流程控制语句</li>
+				<li>函数</li>
+				<li>事件</li>
+				<li>DOM</li>
+			</ul>
+		</li>
+		<li id="lesson2">das</li>
+		<li id="lesson3">dadf</li>
+		<li id="lesson4">HTML/CSS
+			<ul>
+				<li>文字</li>
+				<li>段落</li>
+				<li>表单</li>
+				<li>表格</li>
+			</ul>
+		</li></ul>                                <!-- 这里要注意一下，如果</ul>在下一行则lastChild将会是空字符串 -->
+
+		<ul id="u1">
+			<li id="a">javascript</li>
+			<li id="b">jquery</li>
+			<li id="c">html</li>
+		</ul>
+		<ul id="u2">
+			<li id="d">css3</li>
+			<li id="e">php</li>
+			<li id="f">java</li>
+		</ul>
 	<script type="text/javascript">
 	//节点名、节点值、节点类型
 		var names=document.getElementsByTagName("li");
@@ -31,9 +62,45 @@
 		document.write(lastnode.nodeName+"<br>");
 
 	//父节点
+	var mylist=document.getElementById("tcon");
+	document.write(mylist.parentNode.parentNode.parentNode.lastChild.innerHTML);//注意lastChild对应的内容
+
+	//兄弟节点
+	//获取下一个元素节点，如果下一个节点不是元素节点则一直查找，考虑是否是最后一个元素节点
+	function getNextSibling(m){
+		var x=m.nextSibling;
+		while(x&&x.nodeType!=1){
+			x=x.nextSibling;
+		}
+		return x;
+	}
+	//获取上一个元素节点，如果上一个节点不是元素节点则一直查找，考虑是否是第一个元素节点
+	function getPreviousSibling(n){
+		var y=n.previousSibling;
+		while (y&&y.nodeType!=1) {
+			y=y.previousSibling;
+		}
+		return y;
+	}
+
+	var x=document.getElementById("u1").getElementsByTagName("li")[2];
+	document.write(x.nodeName+"="+x.innerHTML+"<br>");
+	var y=getNextSibling(x);//获取下一个元素节点，若元素节点存在则打印，否则。。。
+	if(y){
+		document.write("nextsibling: "+y.nodeName+" = "+y.innerHTML+"<br>");
+	}else{
+		document.write("这已经是最后一个节点了！<br>")
+	}
 
 
-	
+	var l=document.getElementById("u2").getElementsByTagName("li")[1];
+	document.write(l.nodeName+"="+l.innerHTML+"<br>");
+	var m=getPreviousSibling(l);//获取上一个元素节点，若该元素节点存在则打印，否则。。。
+	if(m){
+		document.write("previoussibling: "+m.nodeName+" = "+m.innerHTML+"<br>");
+	}else{
+		document.write("这已经是第一个节点了！");
+	}
 	</script>
 </body>
 </html>

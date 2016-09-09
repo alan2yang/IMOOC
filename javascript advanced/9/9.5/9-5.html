@@ -2,10 +2,65 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>修改节点</title>
 	<link rel="stylesheet" type="text/css" href="../normalize.css">
 </head>
 <body>
+	<ul id="test">
+		<li>JavaScript</li>
+		<li>HTML</li>
+	</ul>
+	<input type="button" name="" onclick="clearText()" value="清除节点内容">
+
+	<div><b id="oldnode">JavaScript</b>是一个很常用的技术，为网页添加动态效果。</div>
+	<a href="javascript:replaceMessage()"> 将加粗改为斜体</a> <br>                                                           <!-- 跳转到js函数 -->
+
 	
+
+	<script type="text/javascript">
+		//在父元素最后的子节点后面添加节点
+		  var otest = document.getElementById("test");
+		  var newnode=document.createElement("li");//创建一个新的元素节点
+		  newnode.innerHTML="这是新创建的节点";//给新的元素节点添加内容
+		  otest.appendChild(newnode);//将新的元素节点添加到指定的父节点上，放在最后一个子节点
+
+//新创建的元素节点只能使用一次
+
+		//在父元素的子节点上插入新的节点
+		 newnode=document.createElement("li");//重新创建节点
+		  newnode.innerHTML="css";
+		  otest.insertBefore(newnode,otest.childNodes[3]);
+
+		  //删除子节点,插入的元素节点与已有元素节点紧临,但紧临的只有一个节点，上面的节点或下面的节点
+		  // 0            1            2                               3                              4                              5                                                         6
+		  // 空   JavaScript     空        css(insertBefore()插入的节点)     HTML      这是新创建的节点(appendChild()插入的节点)         空
+
+		  function clearText(){
+		  	var x=otest.childNodes.length;                                         //注意为什么在这里进行赋值？
+		  	for (var i = 0; i <x ; i++) {
+		  		otest.removeChild(otest.childNodes[0]);            //为什么这里是0?
+		  	}
+		  }
+
+		  //替换子元素replaceChild（）
+		  function replaceMessage(){
+		  	var oldnode=document.getElementById("oldnode");
+		  	var newnode=document.createElement("i");
+		  	var newtext=document.createTextNode("JavaScript");
+		  	newnode.appendChild(newtext);
+		  	oldnode.parentNode.replaceChild(newnode,oldnode);
+		  }
+
+		  //创建元素节点和文本节点
+		  var main=document.body;
+		  function createa(url,text){
+		  	var newnodeA=document.createElement("a");
+		  	var newtext=document.createTextNode(text);
+		  	newnodeA.appendChild(newtext);
+		  	newnodeA.setAttribute("href",url);
+		  	main.appendChild(newnodeA);
+		  }
+		  createa("http://www.imooc.com","慕课网");
+	</script>
 </body>
 </html>

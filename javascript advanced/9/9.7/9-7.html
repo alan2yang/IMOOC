@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态获取元素大小</title>
+	<link rel="stylesheet" type="text/css" href="../normalize.css">
+	<style type="text/css">
+		#main{
+			border: 10px solid #ccc;
+			margin:5px 10px;
+			overflow: hidden;
+		}
+		#left{
+			width:60%;
+			border-right: 1px dashed red;
+			float: left;
+		}
+		#right{
+			width: 30%;
+			float: left;
+		}
+		#left>div{
+			float: left;
+		}
+		#div1{
+			border:5px solid red;
+			height: 300px;
+			width: 200px;
+			overflow: auto;                  /*这里很重要*/
+		}
+		#div2{
+			height: 400px;
+			width:400px;
+		}
+		#right ul{
+			list-style: none;
+			line-height: 30px;
+		}
+		input{
+			border:1px solid purple;
+			height: 25px;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div id="left">
+			<div>
+				<div id="div1">                        <!-- 获取的是这里 -->
+					<div id="div2">请调整横竖滚动条后，点击按钮后查看offsetTop、offsetLeft、scrollTop、scrollLeft值。
+					</div>
+				</div>
+				<input type="button" value="点击我!" onclick="req()" />
+			</div>
+		</div>
+
+		<div id="right">
+			<ul>结果：
+				<li>offsetTop : <span id="li1"></span></li>
+				<li>offsetLeft : <span id="li2"></span></li>
+				<li> scrollTop : <span id="li3"></span></li>
+				<li>scrollLeft : <span id="li4"></span></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		function req(){
+			var kou=document.getElementById("div1");//这里获取的是滚动窗口，滚动距离是它里面内容的滚动距离
+			document.getElementById("li1").innerHTML=kou.offsetTop+"px<br>";
+			document.getElementById("li2").innerHTML=kou.offsetLeft+"px<br>";
+			document.getElementById("li3").innerHTML=kou.scrollTop+"px<br>";
+			document.getElementById("li4").innerHTML=kou.scrollLeft+"px<br>";
+		}
+		
+	</script>
+</body>
+</html>

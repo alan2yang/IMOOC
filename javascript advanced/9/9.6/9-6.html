@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浏览器可视窗口</title>
+	<link rel="stylesheet" type="text/css" href="../normalize.css">
+</head>
+<body>
+	<script type="text/javascript">
+		//获得浏览器窗口的尺寸（不包括工具栏和滚动条）
+		//考虑兼容性,标准模式和混杂模式
+		var w=window.innerWidth;
+		var h=window.innerHeight;
+		if(typeof w!="number"){
+			if(document.compatMode=="CSS1Compat"){
+				w=document.documentElement.clientWidth;
+				h=document.documentElement.clientHeight;
+			}else{
+				w=document.body.clientWidth;
+				h=document.body.clientHeight;
+			}
+		}
+		document.write("浏览器窗口尺寸:<br>"+"width="+w+"px"+"<br>"+"height="+h+"px"+"<br>");
+
+		//网页尺寸？？？？？？？？？有问题
+		var w1=null,h1=null;
+		if(document.compatMode=="CSS1Compat"){
+			w1=document.documentElement.scrollWidth;
+			h1=document.documentElement.scrollHeight;
+		}else{
+			w1=document.body.scrollWidth;
+			h1=document.body.scrollHeight;
+		}
+		document.write("网页尺寸:<br>"+"width="+w1+"px"+"<br>"+"height="+h1+"px"+"<br>");
+
+		//网页尺寸（包括滚动条等边线）
+		var w2=null,h2=null;
+		if(document.compatMode=="CSS1Compat"){
+			w2=document.documentElement.offsetWidth;
+			h2=document.documentElement.offsetHeight;
+		}else{
+			w2=document.body.offsetWidth;
+			h2=document.body.offsetHeight;
+		}
+		document.write("网页尺寸(包括滚动条等):<br>"+"width="+w2+"px"+"<br>"+"height="+h2+"px");
+	</script>
+</body>
+</html>
