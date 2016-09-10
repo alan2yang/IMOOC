@@ -4,8 +4,67 @@
 	<meta charset="UTF-8">
 	<title>编程练习</title>
 	<link rel="stylesheet" type="text/css" href="../normalize.css">
+	<style type="text/css">
+		table,th,td{
+			border:1px solid black;
+		}
+		.removes{
+			color:red;
+			text-decoration: underline;
+			cursor: pointer;
+		}
+		tr:hover{
+			background-color: #f2f2f2;
+		}
+
+	</style>
 </head>
 <body>
-	
+	<table id="table">
+		<tr>
+			<th>学号</th>
+			<th>姓名</th>
+			<th>操作</th>
+		</tr>
+		<tr>
+			<td>xh001</td>
+			<td>小明</td>
+			<td onclick="removes(this)" class="removes">删除</td>
+		</tr>
+		<tr>
+			<td>xh002</td>
+			<td>小红</td>
+			<td onclick="removes(this)" class="removes">删除</td>
+		</tr>
+	</table>
+	<input type="button" name="" value="添加一行" onclick="addHang()">
+
+
+	<script type="text/javascript">
+		function removes(obj){
+			obj.parentNode.parentNode.removeChild(obj.parentNode);
+		}
+		var num=1;
+		function addHang(){
+			var tab=document.getElementById("table");
+			var hang=document.createElement("tr");
+			var lie1=document.createElement("td");
+			var lie2=document.createElement("td");
+			var lie3=document.createElement("td");
+
+			hang.appendChild(lie1);
+			hang.appendChild(lie2);
+			hang.appendChild(lie3);
+			tab.appendChild(hang);
+
+
+			lie1.innerHTML="xh"+num;
+			lie2.innerHTML="第"+num+"个添加的同学";
+			lie3.innerHTML="删除";
+			lie3.setAttribute("class","removes");                //
+			lie3.setAttribute("onclick","removes(this)");  //两个要添加的属性
+			num++;
+		}
+	</script>
 </body>
 </html>
