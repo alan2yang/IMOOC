@@ -11,20 +11,35 @@
 		<input type="button" value="按钮1.1" onclick="alert(this.value)">
 		<input type="button" id="btn2" value="按钮2">
 		<input type="button" id="btn3" value="按钮3">
+		<input type="button" id="btn4" value="按钮4">
 	</div>
 
 	<script type="text/javascript">
 		function showMessage(){
 			alert(event.type);
 		}
+		////dom0级事件处理程序
 		var btn2=document.getElementById("btn2");
 		btn2.onclick=function(){
 			alert(this.value);
 		}
-		btn2.onclick=null;
-		var btn3=document.getElementById("btn3");
-		btn3.addEventListener("click", showMessage,false);
+		//btn2.onclick=null;
+
+		//dom2级事件处理程序
+		// var btn3=document.getElementById("btn3");
+		// btn3.addEventListener("click", showMessage,false);
 		//btn3.removeEventListener("click", showMessage,false);
+
+		//ie事件处理程
+		//和DOM2级事件处理程序一样，移除事件监听时，传入参数要与添加时相同，匿名函数无法移除
+		//若程序在IE8中报错则不执行下面的程序，要把DOM2级事件处理程序注释掉
+		var btn4=document.getElementById("btn4");
+		var handler=function(){
+			alert(this.showMessage);
+		}
+		btn4.attachEvent("onclick",handler);//注意作用域为全局，不同于DOM0级事件处理程序
+		//btn4.detachEvent("onclick",handler);
+
 	</script>
 </body>
 </html>

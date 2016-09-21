@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象</title>
+</head>
+<body>
+	<div id="box"><input type="button" value="按钮" id="btn"></div>
+
+
+	<script type="text/javascript">
+	//阻止冒泡
+		var btn=document.getElementById("btn");
+		btn.onclick=function(){
+			alert("这是按钮！");
+			//event.stopPropagation();//非IE
+			window.event.cancelBubble=true;//ie
+		}
+		var box=document.getElementById("box");
+		box.onclick=function(){
+			alert("这里是盒子！");
+		}
+	</script>
+</body>
+</html>
